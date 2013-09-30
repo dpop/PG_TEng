@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54063C52-3941-425C-B3E3-AE9443EDB2F6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pass4SureTestingEngine</RootNamespace>
+    <AssemblyName>Pass4SureTestingEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="bcmail-jdk15-1.44">
+      <HintPath>packages\bcmail-jdk15-1.44.dll</HintPath>
+    </Reference>
+    <Reference Include="bcprov-jdk15-1.44">
+      <HintPath>packages\bcprov-jdk15-1.44.dll</HintPath>
+    </Reference>
+    <Reference Include="commons-logging">
+      <HintPath>packages\commons-logging.dll</HintPath>
+    </Reference>
+    <Reference Include="fontbox-1.7.0">
+      <HintPath>packages\fontbox-1.7.0.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>packages\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="icu4j-3.8">
+      <HintPath>packages\icu4j-3.8.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="pdfbox-1.7.0">
+      <HintPath>packages\pdfbox-1.7.0.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyGridEx">
+      <HintPath>packages\PropertyGridEx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.8.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DockingComponent\DockExtender.cs" />
+    <Compile Include="DockingComponent\Floaty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingComponent\Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enumerables\AnswerType.cs" />
+    <Compile Include="Enumerables\ClipboardOperationType.cs" />
+    <Compile Include="Enumerables\ConnectorType.cs" />
+    <Compile Include="Enumerables\CursorType.cs" />
+    <Compile Include="Enumerables\Direction.cs" />
+    <Compile Include="Enumerables\DragType.cs" />
+    <Compile Include="Enumerables\NodeType.cs" />
+    <Compile Include="Enumerables\QuestionType.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logger\LoggingHelper.cs" />
+    <Compile Include="Logic\ExamManager.cs" />
+    <Compile Include="Logic\Filters\ExamFilter.cs" />
+    <Compile Include="Logic\Filters\QuestionFilter.cs" />
+    <Compile Include="Logic\PropertyHandlers\PropertyHandler.cs" />
+    <Compile Include="Models\AnswerModels\BuildListAndReorder\BuildListAndReorderAnswer.cs" />
+    <Compile Include="Models\AnswerModels\CreateTree\CreateTreeAnswer.cs" />
+    <Compile Include="Models\AnswerModels\CreateTree\ExamTreeNode.cs" />
+    <Compile Include="Models\AnswerModels\DragAndDrop\DragAndDropAnswer.cs" />
+    <Compile Include="Models\AnswerModels\DropAndConnect\DropAndConnectAnswer.cs" />
+    <Compile Include="Models\AnswerModels\FillInTheBlanks\FillInTheBlanksAnswer.cs" />
+    <Compile Include="Models\AnswerModels\Hotspot\HotAreaAnswer.cs" />
+    <Compile Include="Models\AnswerModels\MultipleChoice\MultipleChoiceAnswer.cs" />
+    <Compile Include="Models\AnswerModels\PointAndShoot\PointAndShootAnswer.cs" />
+    <Compile Include="Models\AnswerModels\SingleChoice\SingleChoiceAnswer.cs" />
+    <Compile Include="Models\AnswerModels\DragAndDrop\CustomRectangle.cs" />
+    <Compile Include="Models\PropertyModels\DragObject.cs" />
+    <Compile Include="Models\ExamBook.cs" />
+    <Compile Include="Models\QuestionTypes\BuildListAndReorderQuestion.cs" />
+    <Compile Include="Models\PropertyModels\Connector.cs" />
+    <Compile Include="Models\QuestionTypes\CreateATreeQuestion.cs" />
+    <Compile Include="Models\QuestionTypes\DragAndDropQuestion.cs" />
+    <Compile Include="Models\QuestionTypes\DropAndConnectQuestion.cs" />
+    <Compile Include="Models\QuestionTypes\FillInTheBlanksQuestion.cs" />
+    <Compile Include="Models\QuestionTypes\HotAreaQuestion.cs" />
+    <Compile Include="Models\QuestionTypes\MultipleChoiceQuestion.cs" />
+    <Compile Include="Models\QuestionTypes\PointAndShootQuestion.cs" />
+    <Compile Include="Models\QuestionTypes\SingleChoiceQuestion.cs" />
+    <Compile Include="Serialization\Serializer.cs" />
+    <Compile Include="Utils\ClipboardHelper.cs" />
+    <Compile Include="Utils\Cursors\ICursor.cs" />
+    <Compile Include="Utils\Cursors\SelectCursor.cs" />
+    <Compile Include="Utils\Cursors\SourceCursor.cs" />
+    <Compile Include="Utils\Cursors\TargetCrusor.cs" />
+    <Compile Include="Utils\EnumDescriptionConverter.cs" />
+    <Compile Include="Utils\LetterHelper.cs" />
+    <Compile Include="Utils\QuestionHelper.cs" />
+    <Compile Include="Utils\RtfTextHelper.cs" />
+    <Compile Include="Utils\StringListTypeConverter.cs" />
+    <Compile Include="Utils\TCResize.cs" />
+    <Compile Include="Utils\TransparentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewEngines\ViewEngineImplementation\BuildListAndReorderViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\CreateATreeViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\DragAndDropViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\DropAndConnectViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\FillInTheBlanksViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\HotAreaViewEngine.cs" />
+    <Compile Include="ViewEngines\IViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\MultipleChoiceViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\PointAndShootViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\SingleChoiceViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewEngineImplementation\ViewEngine.cs" />
+    <Compile Include="ViewEngines\ViewManager.cs" />
+    <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Parser\Parser.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Parser\QuestionParser.cs" />
+    <Compile Include="Utils\ControlHelper.cs" />
+    <Compile Include="Utils\WordToRtfConvertor.cs" />
+    <Compile Include="ViewModels\ComboBoxItem.cs" />
+    <Compile Include="ViewModels\Questions\BuildListAndReorderPropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Questions\CreateATreePropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Questions\DragAndDropPropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Questions\DropAndConnectPropertiesViewModel.cs" />
+    <Compile Include="Models\PropertyModels\Exhibit.cs" />
+    <Compile Include="ViewModels\Questions\FillInTheBlanksPropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Questions\HotAreaPropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Questions\MultipleChoicePropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Questions\PointAndShootPropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Questions\SingleChoicePropertiesViewModel.cs" />
+    <Compile Include="Views\AddQuestionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddQuestionView.Designer.cs">
+      <DependentUpon>AddQuestionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExamBookTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExamBookTemplate.Designer.cs">
+      <DependentUpon>ExamBookTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExamExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ExamExplorer.Designer.cs">
+      <DependentUpon>ExamExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MoveToView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MoveToView.Designer.cs">
+      <DependentUpon>MoveToView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertiesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PropertiesWindow.Designer.cs">
+      <DependentUpon>PropertiesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ConnectorsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ConnectorsView.Designer.cs">
+      <DependentUpon>ConnectorsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ExhibitPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ExhibitPreview.Designer.cs">
+      <DependentUpon>ExhibitPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ExhibitsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ExhibitsView.Designer.cs">
+      <DependentUpon>ExhibitsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ObjectView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PropertyWindowTemplates\ObjectView.Designer.cs">
+      <DependentUpon>ObjectView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\BuildListAndReorderTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\BuildListAndReorderTemplate.Designer.cs">
+      <DependentUpon>BuildListAndReorderTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\CreateATreeTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\CreateATreeTemplate.Designer.cs">
+      <DependentUpon>CreateATreeTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\DragAndDropTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\DragAndDropTemplate.Designer.cs">
+      <DependentUpon>DragAndDropTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\DropAndConnectTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\DropAndConnectTemplate.Designer.cs">
+      <DependentUpon>DropAndConnectTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\FillInTheBlanksTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\FillInTheBlanksTemplate.Designer.cs">
+      <DependentUpon>FillInTheBlanksTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\HotAreaTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\HotAreaTemplate.Designer.cs">
+      <DependentUpon>HotAreaTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\MultipleChoiceTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\MultipleChoiceTemplate.Designer.cs">
+      <DependentUpon>MultipleChoiceTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\PointAndShootTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\PointAndShootTemplate.Designer.cs">
+      <DependentUpon>PointAndShootTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\SingleChoiceTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\SingleChoiceTemplate.Designer.cs">
+      <DependentUpon>SingleChoiceTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\TempMultiLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionTypes\TempMultiLine.Designer.cs">
+      <DependentUpon>TempMultiLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ÈxamTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ÈxamTemplate.Designer.cs">
+      <DependentUpon>ÈxamTemplate.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\AddQuestionView.resx">
+      <DependentUpon>AddQuestionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExamBookTemplate.resx">
+      <DependentUpon>ExamBookTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ExamExplorer.resx">
+      <DependentUpon>ExamExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MoveToView.resx">
+      <DependentUpon>MoveToView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertiesWindow.resx">
+      <DependentUpon>PropertiesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertyWindowTemplates\ConnectorsView.resx">
+      <DependentUpon>ConnectorsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertyWindowTemplates\ExhibitPreview.resx">
+      <DependentUpon>ExhibitPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertyWindowTemplates\ExhibitsView.resx">
+      <DependentUpon>ExhibitsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PropertyWindowTemplates\ObjectView.resx">
+      <DependentUpon>ObjectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\BuildListAndReorderTemplate.resx">
+      <DependentUpon>BuildListAndReorderTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\CreateATreeTemplate.resx">
+      <DependentUpon>CreateATreeTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\DragAndDropTemplate.resx">
+      <DependentUpon>DragAndDropTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\DropAndConnectTemplate.resx">
+      <DependentUpon>DropAndConnectTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\FillInTheBlanksTemplate.resx">
+      <DependentUpon>FillInTheBlanksTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\HotAreaTemplate.resx">
+      <DependentUpon>HotAreaTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\MultipleChoiceTemplate.resx">
+      <DependentUpon>MultipleChoiceTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\PointAndShootTemplate.resx">
+      <DependentUpon>PointAndShootTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\SingleChoiceTemplate.resx">
+      <DependentUpon>SingleChoiceTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionTypes\TempMultiLine.resx">
+      <DependentUpon>TempMultiLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ÈxamTemplate.resx">
+      <DependentUpon>ÈxamTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Media\CaseStudy.png" />
+    <EmbeddedResource Include="Media\NewExam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Koala.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tulips.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Desert.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
