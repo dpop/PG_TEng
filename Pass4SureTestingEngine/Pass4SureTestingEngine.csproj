@@ -285,12 +285,6 @@
     <Compile Include="Views\QuestionTypes\SingleChoiceTemplate.Designer.cs">
       <DependentUpon>SingleChoiceTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\QuestionTypes\TempMultiLine.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\QuestionTypes\TempMultiLine.Designer.cs">
-      <DependentUpon>TempMultiLine.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ÈxamTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,9 +357,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QuestionTypes\SingleChoiceTemplate.resx">
       <DependentUpon>SingleChoiceTemplate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\QuestionTypes\TempMultiLine.resx">
-      <DependentUpon>TempMultiLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ÈxamTemplate.resx">
       <DependentUpon>ÈxamTemplate.cs</DependentUpon>

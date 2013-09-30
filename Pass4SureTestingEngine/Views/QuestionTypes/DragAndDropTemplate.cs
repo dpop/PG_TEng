@@ -26,7 +26,7 @@ namespace Pass4SureTestingEngine.Views.QuestionTypes
             _question = (DragAndDropQuestion)ExamManager.GetInstance().GetSelectedQuestion();
             _cursorType = CursorType.Select;
             _cursor = new SelectCursor(pbAnswerTemplate);
-            _answer = (DragAndDropAnswer) _question.CorrectAnswer;
+            _answer = _question.CorrectAnswer;
             InitQuestionBuild();
         }
 

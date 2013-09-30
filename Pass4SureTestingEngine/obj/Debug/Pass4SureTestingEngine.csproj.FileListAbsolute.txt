@@ -79,7 +79,6 @@ D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\obj\Debug\Pass4SureTesting
 D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\obj\Debug\Pass4SureTestingEngine.Views.QuestionTypes.MultipleChoiceTemplate.resources
 D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\obj\Debug\Pass4SureTestingEngine.Views.QuestionTypes.PointAndShootTemplate.resources
 D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\obj\Debug\Pass4SureTestingEngine.Views.QuestionTypes.SingleChoiceTemplate.resources
-D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\obj\Debug\Pass4SureTestingEngine.Views.QuestionTypes.TempMultiLine.resources
 D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\obj\Debug\Pass4SureTestingEngine.Views.ÈxamTemplate.resources
 D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\obj\Debug\Pass4SureTestingEngine.csproj.GenerateResource.Cache
 D:\Work\Pass4SureTestingEngine\Pass4SureTestingEngine\bin\Debug\Pass4SureTestingEngine.exe.config
